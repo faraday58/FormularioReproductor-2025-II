@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             lstbRepro = new ListBox();
             label1 = new Label();
@@ -45,6 +46,8 @@
             toolStripSplitButton1 = new ToolStripSplitButton();
             abrirToolStripMenuItem = new ToolStripMenuItem();
             guardarToolStripMenuItem = new ToolStripMenuItem();
+            toolStripMenuItem2 = new ToolStripSeparator();
+            agregarCanciónToolStripMenuItem = new ToolStripMenuItem();
             toolStripSplitButton2 = new ToolStripSplitButton();
             reproducirToolStripMenuItem = new ToolStripMenuItem();
             pausarToolStripMenuItem = new ToolStripMenuItem();
@@ -52,6 +55,7 @@
             toolStripMenuItem1 = new ToolStripSeparator();
             siguienteToolStripMenuItem = new ToolStripMenuItem();
             anteriorToolStripMenuItem = new ToolStripMenuItem();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)ptbAlbum).BeginInit();
             toolStrip1.SuspendLayout();
             SuspendLayout();
@@ -156,8 +160,10 @@
             // prbarTime
             // 
             prbarTime.Location = new Point(557, 557);
+            prbarTime.Maximum = 140;
             prbarTime.Name = "prbarTime";
             prbarTime.Size = new Size(547, 10);
+            prbarTime.Step = 1;
             prbarTime.TabIndex = 4;
             // 
             // toolStrip1
@@ -173,7 +179,7 @@
             // toolStripSplitButton1
             // 
             toolStripSplitButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            toolStripSplitButton1.DropDownItems.AddRange(new ToolStripItem[] { abrirToolStripMenuItem, guardarToolStripMenuItem });
+            toolStripSplitButton1.DropDownItems.AddRange(new ToolStripItem[] { abrirToolStripMenuItem, guardarToolStripMenuItem, toolStripMenuItem2, agregarCanciónToolStripMenuItem });
             toolStripSplitButton1.Image = (Image)resources.GetObject("toolStripSplitButton1.Image");
             toolStripSplitButton1.ImageTransparentColor = Color.Magenta;
             toolStripSplitButton1.Name = "toolStripSplitButton1";
@@ -183,15 +189,27 @@
             // abrirToolStripMenuItem
             // 
             abrirToolStripMenuItem.Name = "abrirToolStripMenuItem";
-            abrirToolStripMenuItem.Size = new Size(177, 34);
+            abrirToolStripMenuItem.Size = new Size(246, 34);
             abrirToolStripMenuItem.Text = "Abrir";
             abrirToolStripMenuItem.Click += abrirToolStripMenuItem_Click;
             // 
             // guardarToolStripMenuItem
             // 
             guardarToolStripMenuItem.Name = "guardarToolStripMenuItem";
-            guardarToolStripMenuItem.Size = new Size(177, 34);
+            guardarToolStripMenuItem.Size = new Size(246, 34);
             guardarToolStripMenuItem.Text = "Guardar";
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(243, 6);
+            // 
+            // agregarCanciónToolStripMenuItem
+            // 
+            agregarCanciónToolStripMenuItem.Name = "agregarCanciónToolStripMenuItem";
+            agregarCanciónToolStripMenuItem.Size = new Size(246, 34);
+            agregarCanciónToolStripMenuItem.Text = "Agregar Canción";
+            agregarCanciónToolStripMenuItem.Click += agregarCanciónToolStripMenuItem_Click;
             // 
             // toolStripSplitButton2
             // 
@@ -207,37 +225,44 @@
             // 
             reproducirToolStripMenuItem.Image = (Image)resources.GetObject("reproducirToolStripMenuItem.Image");
             reproducirToolStripMenuItem.Name = "reproducirToolStripMenuItem";
-            reproducirToolStripMenuItem.Size = new Size(200, 34);
+            reproducirToolStripMenuItem.Size = new Size(270, 34);
             reproducirToolStripMenuItem.Text = "Reproducir";
+            reproducirToolStripMenuItem.Click += reproducirToolStripMenuItem_Click;
             // 
             // pausarToolStripMenuItem
             // 
             pausarToolStripMenuItem.Name = "pausarToolStripMenuItem";
-            pausarToolStripMenuItem.Size = new Size(200, 34);
+            pausarToolStripMenuItem.Size = new Size(270, 34);
             pausarToolStripMenuItem.Text = "Pausar";
+            pausarToolStripMenuItem.Click += pausarToolStripMenuItem_Click;
             // 
             // detenerToolStripMenuItem
             // 
             detenerToolStripMenuItem.Name = "detenerToolStripMenuItem";
-            detenerToolStripMenuItem.Size = new Size(200, 34);
+            detenerToolStripMenuItem.Size = new Size(270, 34);
             detenerToolStripMenuItem.Text = "Detener";
+            detenerToolStripMenuItem.Click += detenerToolStripMenuItem_Click;
             // 
             // toolStripMenuItem1
             // 
             toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(197, 6);
+            toolStripMenuItem1.Size = new Size(267, 6);
             // 
             // siguienteToolStripMenuItem
             // 
             siguienteToolStripMenuItem.Name = "siguienteToolStripMenuItem";
-            siguienteToolStripMenuItem.Size = new Size(200, 34);
+            siguienteToolStripMenuItem.Size = new Size(270, 34);
             siguienteToolStripMenuItem.Text = "Siguiente";
             // 
             // anteriorToolStripMenuItem
             // 
             anteriorToolStripMenuItem.Name = "anteriorToolStripMenuItem";
-            anteriorToolStripMenuItem.Size = new Size(200, 34);
+            anteriorToolStripMenuItem.Size = new Size(270, 34);
             anteriorToolStripMenuItem.Text = "Anterior";
+            // 
+            // timer1
+            // 
+            timer1.Tick += timer1_Tick;
             // 
             // Form1
             // 
@@ -291,5 +316,8 @@
         private ToolStripSeparator toolStripMenuItem1;
         private ToolStripMenuItem siguienteToolStripMenuItem;
         private ToolStripMenuItem anteriorToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem2;
+        private ToolStripMenuItem agregarCanciónToolStripMenuItem;
+        private System.Windows.Forms.Timer timer1;
     }
 }

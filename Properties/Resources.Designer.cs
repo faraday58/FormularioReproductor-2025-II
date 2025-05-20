@@ -59,5 +59,15 @@ namespace FormularioReproductor_2025_II.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap descarga_arrow {
+            get {
+                object obj = ResourceManager.GetObject("descarga-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
